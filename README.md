@@ -36,13 +36,28 @@ Daftar modul otomatisasi yang tersedia berdasarkan platform layanan yang didukun
 
    > **Catatan Otorisasi:** Saat menjalankan Apps Script untuk pertama kali, Google akan menampilkan peringatan *"Google belum memverifikasi aplikasi ini"*. Ini adalah hal yang **normal dan aman** — script tersebut hanya menjembatani koneksi antar-file di dalam Akun Google Anda sendiri. Klik *Lanjutan (Advanced)* → *Buka Program Prodeskel (tidak aman)* → *Izinkan (Allow)*.
 
+### SIKS-NG (Kemensos RI Data Scraper AI)
+1. **Penyalinan Data Massal ke Excel**  
+   Mengekstrak data penerima bantuan dan data keluarga dari situs SIKS-NG Kemensos RI (Data BNBA DTSEN, Data DTKS, maupun URL kustom) langsung ke dalam file Excel (`.xlsx`).
+2. **Pengurai Kartu Keluarga Cerdas (Smart Card Parser)**  
+   Mendeteksi tampilan data vertikal/kartu dan memecahnya secara otomatis menjadi kolom-kolom terpisah yang terstruktur: *Nomor KK*, *Nama Kepala Keluarga*, *Alamat*, *Desil*, *Status Perlinsos*, dan *Status Keaktifan*.
+3. **Preservasi Nomor Identitas (Anti-Eksponensial)**  
+   Menjaga nomor berdigit panjang (Nomor KK dan NIK $\ge$ 10 digit) tetap sebagai teks murni di Excel agar terhindar dari notasi ilmiah (`1.81001E+15`).
+4. **Styling Excel Rapi & Otomatis**  
+   Menambahkan kolom nomor urut otomatis, styling header biru navy profesional, border pada tiap sel, serta penyesuaian lebar kolom otomatis.
+5. **Analisis AI Terintegrasi (Google Gemini AI)**  
+   Menganalisis screenshot tata letak tabel dan alur kerja menggunakan AI Gemini Vision, dilengkapi sistem kompresi gambar dan *instant template fallback* agar proses tetap berjalan cepat dan responsif.
+6. **Navigasi Pagination Fleksibel & Ramah CAPTCHA**  
+   Mendukung mode Semi-Otomatis (aman untuk menyelesaikan verifikasi CAPTCHA matematika antar-halaman) maupun mode Otomatis Penuh.
+
 <!-- Tambahkan platform baru di bawah ini sesuai ketersediaan layanan -->
 
 ## ⚙️ Cara Penggunaan
 
-1. Jalankan file **`Robot.exe`**.
-2. Ketik angka pada menu terminal untuk memilih platform layanan dan tugas yang ingin dijalankan.
-3. Robot akan bekerja secara otomatis hingga proses selesai.
+1. **Pengguna / Pembeli:** Jalankan file **`Robot.exe`**.
+2. **Pengembang / Developer:** Jalankan file **`2_Jalankan_Robot.bat`**.
+3. Ketik angka pada menu terminal untuk memilih platform layanan dan tugas yang ingin dijalankan.
+4. Robot akan bekerja secara otomatis hingga proses selesai. Seluruh data hasil *output* akan tersimpan di dalam folder `Data_...` yang sesuai di samping file robot.
 
 ## 🤖 Teknologi AI & Kontribusi
 
